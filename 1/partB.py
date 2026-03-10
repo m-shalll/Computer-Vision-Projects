@@ -32,7 +32,6 @@ def median_filter(image, kernel_size):
     # Use OpenCV's built-in median filter for better performance and simplicity
     filtered_image = cv2.medianBlur(image, kernel_size)
 
-
     return filtered_image
 
 
@@ -145,7 +144,6 @@ if __name__ == "__main__":
     ], dtype=np.int32)
     # Apply the region of interest mask to the edges image
     masked_edges = region_of_interest(edges, vertices)
-    masked_edges_pixels = np.argwhere(masked_edges > 0)
 
     hough_transform_accumulator, rhos, thetas = hough_transform(masked_edges)
     peaks = find_hough_peaks(hough_transform_accumulator, num_peaks=9)

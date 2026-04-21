@@ -291,6 +291,7 @@ def main():
         # WARP + OVERLAY
         # -----------------------------
         warped = inverse_warp(ar_frame, H, (frame.shape[0], frame.shape[1]))
+        # warped = cv2.warpPerspective(ar_frame, np.linalg.inv(H), (frame_w, frame_h))
 
         corners = np.float32([[0,0],[w,0],[w,h],[0,h]])
         mapped = []
